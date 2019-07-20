@@ -1,0 +1,82 @@
+#include <iostream.h>
+#include <string.h>
+#include <stdlib.h>
+#include <conio.h>
+
+
+
+void maytinh(char input[],char traloi[])
+{
+
+    int b,c=0;
+
+	srand(time(NULL));  //Tao so ngau nhien//
+    int min = 10;
+    int max = 20;
+    int a = (min + (rand() % (int)(max - min + 1)));
+
+
+
+
+	switch (a)
+	{
+	case 0: strcpy(traloi, "keo"); break;
+	case 1: strcpy(traloi, "bua"); break;
+	case 2: strcpy(traloi, "bao"); break;
+	default: cout << "Ket qua khong dung"<<"\n";
+	}
+
+	if(traloi=="keo")
+        b=0;
+    if(traloi=="bua")
+        b=1;
+    if(traloi=="bao")
+        b=2;
+
+
+
+   if(input=="keo")
+        c=0;
+    if(input=="bua")
+        c=1;
+    if(input=="bao")
+        c=2;
+
+
+
+	if (b < c)
+	{
+		if (b == 2)
+			cout << "Nguoi choi thang" << "\n";
+
+		cout << "Nguoi choi thang" << "\n";
+	}
+
+	if (b > c)
+	{
+		if (c == 2)
+			cout << "May tinh thang" << "\n";
+
+		cout << "May tinh thang" << "\n";
+	}
+
+	if (b == c)
+		cout << "Ket qua hoa" << "\n";
+
+	cout<<"b:"<<b<<"\n";
+	cout<<"c:"<<c<<"\n";
+    cout<<"traloi:"<<traloi;
+}
+
+
+void main()
+{
+    char keo[]="keo", bua[]="bua", bao[]="bao";
+	char input2[5];
+	char traloi2[5];
+	cout << "Xin chao den voi chuong trinh RPS V1.0" << "\n";
+	cout << "Hay nhap phuong an cua ban:";
+	cin >> input2;
+	maytinh(input2,traloi2);
+    getch();
+}
